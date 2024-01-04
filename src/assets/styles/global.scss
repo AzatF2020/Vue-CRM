@@ -1,0 +1,49 @@
+@import 'reset-css/sass/reset';
+
+:root {
+
+}
+
+html {
+  font-size: 0.595vw;
+
+  @include breakpointMF(super-large) {
+    font-size: 11.8px;
+  }
+
+  @include breakpoint(laptop) {
+    font-size: 10px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button {
+  border: none;
+  outline: none;
+  box-shadow: transparent;
+}
+
+body {
+  background-color: var(--black);
+}
+
+.container {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+  @supports (width: max(20vw, 100px)) {
+    padding-right: max(env(safe-area-inset-right, 1.4rem), 3.5rem);
+    padding-left: max(env(safe-area-inset-left, 1.4rem), 3.5rem);
+
+    @include breakpoint(tablet) {
+      padding-right: max(env(safe-area-inset-right, 1.4rem), 1rem);
+      padding-left: max(env(safe-area-inset-left, 1.4rem), 1rem);
+    }
+  }
+}
